@@ -16,7 +16,7 @@ const iceSlice=createSlice({
             }
             else{
                 state.noOficecreams-=action.payload
-                state.noOfordered+=parseInt(action.payload)
+                state.noOfordered+=parseInt(action.payload.qty)
             }
         },
         restocked:(state,action)=>{

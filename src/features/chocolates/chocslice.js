@@ -11,7 +11,7 @@ const chocoSlice=createSlice({
     reducers:{
         ordered:(state,action)=>{
             state.noOfchoclates-=action.payload;
-            state.orderChcos+=parseInt(action.payload)
+            state.orderChcos+=parseInt(action.payload.qty)
         },
         restocked:(state,action)=>{
             state.noOfchoclates+=action.payload

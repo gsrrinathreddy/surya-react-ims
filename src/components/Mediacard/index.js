@@ -70,7 +70,7 @@ export default function MediaCard(props) {
     let title=props.title;
     let photo=props.photo;
     let price=props.price
-    let dicountedPrice=props.discountedPrice
+    let discountedPrice=props.discountedPrice
     let clr=props.clr
     let ordername=props.ordername
   
@@ -84,6 +84,13 @@ export default function MediaCard(props) {
 
 
   };
+  let params={
+    title:title,
+    price:price,
+    discountedPrice:discountedPrice,
+    qty:parseInt(qty)
+
+  }
 
   return (
     
@@ -134,13 +141,13 @@ export default function MediaCard(props) {
       <Box>
       <Button variant='contained' aria-label="cart " color="success" onClick={()=>{
       if (ordername=="cake") {
-        dispatch(ckorder(qty))
+        dispatch(ckorder(params))
         
       } 
        else if (ordername=="icecream") {
-        dispatch(iceOrd(qty))        
+        dispatch(iceOrd(params))        
        } else if(ordername=="chocolate")  {
-        dispatch(chocorder(qty))
+        dispatch(chocorder(params))
       }
         
       }}>
@@ -175,7 +182,7 @@ export default function MediaCard(props) {
       
           <Typography ><del>actualprice:{price}</del></Typography>
           <Typography >
-         Discounted Price: {dicountedPrice}
+         Discounted Price: {discountedPrice}
           </Typography>
          
         </CardContent>

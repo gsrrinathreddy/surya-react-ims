@@ -14,7 +14,7 @@ const cakeSlice=createSlice({
            }else{
                 
             state.noOfcakes-=action.payload
-            state.noOfordered+=parseInt(action.payload)
+            state.noOfordered+=parseInt(action.payload.qty)
            }
         },
         restocked:(state,action)=>{
