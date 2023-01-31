@@ -1,16 +1,16 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Snackbar from '@mui/material/Snackbar';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
 
 export default function Sbar(props) {
-    let msg1=props.msg1;
-    let msgbut=props.msgbut;
-    let num=props.num
+  let msg1 = props.msg1;
+  let msgbut = props.msgbut;
+  let num = props.num;
 
   const [state, setState] = React.useState({
     open: false,
-    vertical: 'top',
-    horizontal: 'center',
+    vertical: "top",
+    horizontal: "center",
   });
   const { vertical, horizontal, open } = state;
 
@@ -26,8 +26,8 @@ export default function Sbar(props) {
     <React.Fragment>
       <Button
         onClick={handleClick({
-          vertical: 'top',
-          horizontal: 'center',
+          vertical: "top",
+          horizontal: "center",
         })}
       >
         {msgbut}

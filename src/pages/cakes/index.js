@@ -1,12 +1,3 @@
-// import Itemdata from "../../components/Itemdata";
-// import MediaCard from "../../components/Mediacard";
-// import CakeView from "../../features/cake/CakeView/CakeView";
-
-// export default function Cakes(){
-//     return(
-//         <Itemdata/>
-//     )
-// }
 import cake1 from "../../../src/assets/cakes/cake1.jpg";
 import cake2 from "../../../src/assets/cakes/cake2.jpg";
 import cake3 from "../../assets/cakes/cake3.jpg";
@@ -30,74 +21,240 @@ import cake20 from "../../assets/cakes/cake20.jpg";
 import MediaCard from "../../components/Mediacard";
 import { Grid } from "@mui/material";
 import { ordered } from "../../features/cake/cakeslice";
-import Box from '@mui/material/Box'
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { Feedback } from '@mui/icons-material';
+import Box from "@mui/material/Box";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Feedback } from "@mui/icons-material";
 
-export default function Itemdata(){
-    const cakeList=[{cakename:'Vanilla',img:cake1,price:'800',discountedPrice:'600',label:'bestseller',clr:"success"},
-    {cakename:'chocolate',img:cake2,price:'900',discountedPrice:'720',label:'bestseller',clr:"success"},
-    {cakename:'layeredcake',img:cake3,price:'1100',discountedPrice:'820',label:'premium',clr:"primary"},
-     {cakename:'blackforest',img:cake4,title:'chocolate',price:'800',discountedPrice:'720',label:'out of stock',clr:"error"},
-     {cakename:'cream and cookie',img:cake5,title:'chocolate',price:'1000',discountedPrice:'820',label:'premium',clr:"primary"},
-     {cakename:'pineapple',img:cake6,title:'chocolate',price:'900',discountedPrice:'820',label:'recommended',clr:"secondary"},
-     {cakename:'kitkat',img:cake7,title:'chocolate',price:'900',discountedPrice:'790',label:'outofstock',clr:"error"},
-     {cakename:'Image',img:cake8,title:'chocolate',price:'900',discountedPrice:'750',label:'premium',clr:"primary"},
-     {cakename:'ferrero rocher',img:cake9,title:'chocolate',price:'1100',discountedPrice:'990',label:'bestseller',clr:"success"},
-     {cakename:'Blackforest',img:cake10,title:'chocolate',price:'1200',discountedPrice:'1100',label:'recommended',clr:"secondary"},
-     {cakename:'panda',img:cake11,title:'chocolate',price:'1350',discountedPrice:'1100',label:'recommended',clr:"secondary"},
-     {cakename:'darkchocolate',img:cake12,title:'chocolate',price:'1450',discountedPrice:'1200',label:'only few left',clr:"warning"},
-     {cakename:'heartshaped',img:cake13,title:'chocolate',price:'1300',discountedPrice:'1099',label:'onlyfewleft',clr:"warning"},
-     {cakename:'brown bear',img:cake14,title:'chocolate',price:'1100',discountedPrice:'900',label:'bestseller',clr:"success"},
-     {cakename:'cat',img:cake15,title:'chocolate',price:'1200',discountedPrice:'950',label:'bestseller',clr:"success"},
-     {cakename:'cyndrella',img:cake16,title:'chocolate',price:'1000',discountedPrice:'850',label:'premium',clr:"primary"},
-     {cakename:'gems&kitkat',img:cake17,title:'chocolate',price:'1300',discountedPrice:'1090',label:'out of stock',clr:"error"},
-     {cakename:'white forest',img:cake18,title:'chocolate',price:'1100',discountedPrice:'1000',label:'best seller',clr:"success"},
-     {cakename:'milkybar',img:cake19,title:'chocolate',price:'1100',discountedPrice:'990',label:'premium',clr:"primary"},
-     {cakename:'redvelvet',img:cake20,title:'chocolate',price:'900',discountedPrice:'800',label:'only few in stock',clr:"warning"},]
+export default function Itemdata() {
+  const cakeList = [
+    {
+      cakename: "Vanilla",
+      img: cake1,
+      price: "800",
+      discountedPrice: "600",
+      label: "bestseller",
+      clr: "success",
+    },
+    {
+      cakename: "chocolate",
+      img: cake2,
+      price: "900",
+      discountedPrice: "720",
+      label: "bestseller",
+      clr: "success",
+    },
+    {
+      cakename: "layeredcake",
+      img: cake3,
+      price: "1100",
+      discountedPrice: "820",
+      label: "premium",
+      clr: "primary",
+    },
+    {
+      cakename: "blackforest",
+      img: cake4,
+      title: "chocolate",
+      price: "800",
+      discountedPrice: "720",
+      label: "out of stock",
+      clr: "error",
+    },
+    {
+      cakename: "cream and cookie",
+      img: cake5,
+      title: "chocolate",
+      price: "1000",
+      discountedPrice: "820",
+      label: "premium",
+      clr: "primary",
+    },
+    {
+      cakename: "pineapple",
+      img: cake6,
+      title: "chocolate",
+      price: "900",
+      discountedPrice: "820",
+      label: "recommended",
+      clr: "secondary",
+    },
+    {
+      cakename: "kitkat",
+      img: cake7,
+      title: "chocolate",
+      price: "900",
+      discountedPrice: "790",
+      label: "outofstock",
+      clr: "error",
+    },
+    {
+      cakename: "Image",
+      img: cake8,
+      title: "chocolate",
+      price: "900",
+      discountedPrice: "750",
+      label: "premium",
+      clr: "primary",
+    },
+    {
+      cakename: "ferrero rocher",
+      img: cake9,
+      title: "chocolate",
+      price: "1100",
+      discountedPrice: "990",
+      label: "bestseller",
+      clr: "success",
+    },
+    {
+      cakename: "Blackforest",
+      img: cake10,
+      title: "chocolate",
+      price: "1200",
+      discountedPrice: "1100",
+      label: "recommended",
+      clr: "secondary",
+    },
+    {
+      cakename: "panda",
+      img: cake11,
+      title: "chocolate",
+      price: "1350",
+      discountedPrice: "1100",
+      label: "recommended",
+      clr: "secondary",
+    },
+    {
+      cakename: "darkchocolate",
+      img: cake12,
+      title: "chocolate",
+      price: "1450",
+      discountedPrice: "1200",
+      label: "only few left",
+      clr: "warning",
+    },
+    {
+      cakename: "heartshaped",
+      img: cake13,
+      title: "chocolate",
+      price: "1300",
+      discountedPrice: "1099",
+      label: "onlyfewleft",
+      clr: "warning",
+    },
+    {
+      cakename: "brown bear",
+      img: cake14,
+      title: "chocolate",
+      price: "1100",
+      discountedPrice: "900",
+      label: "bestseller",
+      clr: "success",
+    },
+    {
+      cakename: "cat",
+      img: cake15,
+      title: "chocolate",
+      price: "1200",
+      discountedPrice: "950",
+      label: "bestseller",
+      clr: "success",
+    },
+    {
+      cakename: "cyndrella",
+      img: cake16,
+      title: "chocolate",
+      price: "1000",
+      discountedPrice: "850",
+      label: "premium",
+      clr: "primary",
+    },
+    {
+      cakename: "gems&kitkat",
+      img: cake17,
+      title: "chocolate",
+      price: "1300",
+      discountedPrice: "1090",
+      label: "out of stock",
+      clr: "error",
+    },
+    {
+      cakename: "white forest",
+      img: cake18,
+      title: "chocolate",
+      price: "1100",
+      discountedPrice: "1000",
+      label: "best seller",
+      clr: "success",
+    },
+    {
+      cakename: "milkybar",
+      img: cake19,
+      title: "chocolate",
+      price: "1100",
+      discountedPrice: "990",
+      label: "premium",
+      clr: "primary",
+    },
+    {
+      cakename: "redvelvet",
+      img: cake20,
+      title: "chocolate",
+      price: "900",
+      discountedPrice: "800",
+      label: "only few in stock",
+      clr: "warning",
+    },
+  ];
 
-     let ordername="cake"
-    return(
-        <>
-        <br/>
-        <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={{backgroundColor:'black'}}>
+  let ordername = "cake";
+  return (
+    <>
+      <br />
+      <Grid
+        container
+        spacing={{ xs: 2, md: 2 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+        sx={{ backgroundColor: "black" }}
+      >
+        {cakeList.map((item, index) => {
+          return (
+            <Grid
+              display="flex"
+              justifyContent="center"
+              xs={4}
+              sm={4}
+              md={4}
+              pt={4}
+            >
+              <MediaCard
+                title={item.cakename}
+                photo={item.img}
+                price={item.price}
+                discountedPrice={item.discountedPrice}
+                caption={item.label}
+                clr={item.clr}
+                order={ordered}
+              ></MediaCard>
+            </Grid>
+          );
+        })}
+      </Grid>
+      <Box
+        sx={{ backgroundColor: "silver" }}
+        display="flex"
+        justifyContent="space-between"
+        pt={5}
+      >
+        <h4>Connect with Us</h4>
 
-      
-        {
-           
-            cakeList.map((item,index)=>{
-                return(
-                    <Grid display="flex" justifyContent="center" xs={4} sm={4} md={4} pt={4}>
-                    
-                    <MediaCard title={item.cakename}
-                                photo={item.img}
-                                price={item.price}
-                                discountedPrice={item.discountedPrice}
-                                caption={item.label}
-                                clr={item.clr}
-                                order={ordered}
-                    ></MediaCard>
-                    </Grid>
-                )
-            })
-           
-        }
-          </Grid>
-          <Box sx={{backgroundColor:'silver'}} display='flex' justifyContent='space-between'pt={5}>
+        <FacebookIcon />
 
-        <h4>Connect with Us</h4>  
+        <InstagramIcon />
 
-        <FacebookIcon/>
-
-        <InstagramIcon/>
-
-        <LinkedInIcon/>
-
-        </Box>
-
-        </>
-
-    )
+        <LinkedInIcon />
+      </Box>
+    </>
+  );
 }

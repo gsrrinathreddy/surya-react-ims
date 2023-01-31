@@ -1,64 +1,54 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState={
-    cartList:[],
-    totalItems:0
-}
+const initialState = {
+  cartList: [],
+  totalItems: 0,
+};
 
-const cartSlice=createSlice({
-    name:'cart',
-    initialState,
-    extraReducers:{
-        ['cake/ordered']:(state,action)=>{
+const cartSlice = createSlice({
+  name: "cart",
+  initialState,
+  extraReducers: {
+    ["cake/ordered"]: (state, action) => {
+      console.log("cart", action.payload);
 
-            console.log('cart',action.payload);
+      state.cartList.push(action.payload);
 
-            state.cartList.push(action.payload);
+      state.totalItems += parseInt(action.payload.qty);
+    },
 
-            state.totalItems +=parseInt(action.payload.qty);
+    ["chocolate/ordered"]: (state, action) => {
+      console.log("cart", action.payload);
 
-        },
+      state.cartList.push(action.payload);
 
-        ['chocolate/ordered']:(state,action)=>{
+      state.totalItems += parseInt(action.payload.qty);
+    },
 
-            console.log('cart',action.payload)
+    ["flower/ordered"]: (state, action) => {
+      console.log("cart", action.payload);
 
-            state.cartList.push(action.payload);
+      state.cartList.push(action.payload);
 
-            state.totalItems +=parseInt(action.payload.qty);
+      state.totalItems += parseInt(action.payload.qty);
+    },
 
-        },
+    ["gift/ordered"]: (state, action) => {
+      console.log("cart", action.payload);
 
-        ['flower/ordered']:(state,action)=>{
+      state.cartList.push(action.payload);
 
-            console.log('cart',action.payload)
+      state.totalItems += parseInt(action.payload.qty);
+    },
 
-            state.cartList.push(action.payload);
+    ["ice/ordered"]: (state, action) => {
+      console.log("cart", action.payload);
 
-            state.totalItems +=parseInt(action.payload.qty);
+      state.cartList.push(action.payload);
 
-        },
+      state.totalItems += parseInt(action.payload.qty);
+    },
+  },
+});
 
-        ['gift/ordered']:(state,action)=>{
-
-            console.log('cart',action.payload);
-
-            state.cartList.push(action.payload);
-
-            state.totalItems +=parseInt(action.payload.qty);
-
-        },
-
-        ['ice/ordered']:(state,action)=>{
-
-            console.log('cart',action.payload);
-
-            state.cartList.push(action.payload);
-
-            state.totalItems +=parseInt(action.payload.qty);
-
-        }
-    }
-})
-
-export default cartSlice.reducer
+export default cartSlice.reducer;

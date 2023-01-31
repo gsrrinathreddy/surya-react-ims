@@ -1,13 +1,11 @@
-import * as React from 'react';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+import * as React from "react";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 export default function Basicbutton() {
   return (
     <Stack spacing={2} direction="row">
-      <Button variant="text">OrderCakes
-      </Button>
-
+      <Button variant="text">OrderCakes</Button>
     </Stack>
   );
 }
@@ -25,7 +23,7 @@ export default function Basicbutton() {
 //       noValidate
 //       autoComplete="off"
 //     >
-      
+
 //       <TextField id="filled-basic" label="Filled" variant="filled" />
 //       <TextField id="standard-basic" label="Standard" variant="standard" />
 //     </Box>
