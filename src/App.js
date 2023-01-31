@@ -18,7 +18,7 @@ function App() {
       <BrowserRouter>
         <Navbar pages={p1} settings={s1} />
         <Routes>
-          <Route path="/" element={<Chocolates />} />
+          <Route path="/" element={<Icecream />} />
           <Route path="/cakes" element={<Cakes />} />
           <Route path="/icecreams" element={<Icecream />} />
           <Route path="/chocolates" element={<Chocolates />} />
