@@ -33,23 +33,16 @@ export default function CartsPage(){
                 <Typography variant='h6' sx={{fontWeight:'bold'}}>Name</Typography>
 
                 {
-
                     cartList.map((item)=>{
 
                         return(
-
                             <Typography>
-
                             {item.title}
-
                             </Typography>
-
                         )
 
                     })
-
                 }
-
                 </Grid>
 
                 <Grid md={2}>
@@ -61,29 +54,35 @@ export default function CartsPage(){
                     </Typography>
 
                     {
-
                         cartList.map((item)=>{
-
                             return(
 
                                 <Typography>
-
-                                    {item.discountedPrice}
-
+                                    {item.price}
                                 </Typography>
-
-
-
                             )
-
                         })
-
                     }
 
                     </Grid>
+                    <Grid md={2}>
 
-                   
+                   <Typography variant='h6' sx={{fontWeight:'bold'}}>
 
+                    Price
+                    </Typography>
+
+                    {
+                        cartList.map((item)=>{
+                            return(
+                                <Typography>
+                                    {item.discountedPrice}
+                                </Typography>
+                            )
+                        })
+                    }
+
+                    </Grid>
                     <Grid md={2}>
 
                     <Typography variant='h6' sx={{fontWeight:'bold'}}>
@@ -104,52 +103,13 @@ export default function CartsPage(){
 
                                 </Typography>
 
-
-
                             )
-
                         })
-
                     }
 
                     </Grid>
-
                    
-
-                    <Grid md={2}>
-
-                   <Typography variant='h6' sx={{fontWeight:'bold'}}>
-
-                    Price
-
-                    </Typography>
-
-                    {
-
-                        cartList.map((item)=>{
-
-                            return(
-
-                                <Typography>
-
-                                    {item.qty*item.discountedPrice}
-
-                                   
-
-                                </Typography>
-
-
-
-                            )
-
-                        })
-
-                    }
-
-                    </Grid>
-
-                    </Grid>
-
+                   <Grid>
                     <Typography variant='h6' sx={{fontWeight:'bold'}}>
 
                     Total
@@ -164,14 +124,16 @@ export default function CartsPage(){
                             return(
 
                                 <Typography>
-                                   
+                                   {item.qty*item.discountedPrice}
                                 </Typography>
 
                             )
                         })
                         
                     }
-                   amount to be paid:{sum}
+                   <h4>amount to be paid:{sum}</h4>
+                   </Grid>
+                   </Grid>
                     </Box>
 {/* 
                 <Button onClick={()=>navigate('order-summary')}>Place Order</Button> */}

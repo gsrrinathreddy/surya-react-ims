@@ -15,7 +15,7 @@ const iceSlice=createSlice({
                 console.log("out of stock")
             }
             else{
-                state.noOficecreams-=action.payload
+                state.noOficecreams-=action.payload.qty
                 state.noOfordered+=parseInt(action.payload.qty)
             }
         },

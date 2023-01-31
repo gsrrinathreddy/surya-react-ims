@@ -41,8 +41,8 @@ function Navbar(props) {
   };
 
   return (
-    <AppBar position="static" >
-      <Container maxWidth="xl" style={{backgroundImage:'linear-gradient(to right,grey,white)'}}>
+    <AppBar position="static" style={{backgroundImage:'linear-gradient(to right,grey,white)'}}>
+      <Container maxWidth="xl" >
         <Toolbar disableGutters>
           
           <Typography
@@ -93,9 +93,12 @@ function Navbar(props) {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <Link to={page} style={{textDecoration:'none'}}>
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
+                </Link>
+              
               ))}
             </Menu>
           </Box>

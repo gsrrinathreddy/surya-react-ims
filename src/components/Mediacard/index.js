@@ -31,6 +31,10 @@ import Stack from '@mui/material/Stack';
 import { ordered as chocorder } from '../../features/chocolates/chocslice';
 import Button from '@mui/material/Button';
 
+
+
+
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -60,19 +64,19 @@ export default function MediaCard(props) {
   const [open, setOpen] = React.useState(false);
     const dispatch=useDispatch();
     const noOfcakes=useSelector((state)=>state.cake.noOfcakes);
-  const orderedcakes=useSelector((state)=>state.cake.noOfordered)
-  const orderedicecreams=useSelector((state)=>state.ice.noOfordered)
-  let sum=orderedcakes+orderedicecreams
-  let badgeContent=props.badgeContent
-  let color=props.color
-  let caption=props.caption
+    const orderedcakes=useSelector((state)=>state.cake.noOfordered)
+    const orderedicecreams=useSelector((state)=>state.ice.noOfordered)
+    let sum=orderedcakes+orderedicecreams
+
+
+    let caption=props.caption
     let Itemname=props.Itemname
     let title=props.title;
     let photo=props.photo;
     let price=props.price
     let discountedPrice=props.discountedPrice
     let clr=props.clr
-    let ordername=props.ordername
+    let orderPlaced=props.order
   
   
   const [expanded, setExpanded] = React.useState(false);
@@ -95,7 +99,7 @@ export default function MediaCard(props) {
   return (
     
     
-    <Card sx={{ maxWidth:350,marginLeft:"70px" ,backgroundColor:'lightgrey' }}>
+    <Card sx={{ maxWidth:350,marginLeft:"20px" ,backgroundColor:'lightgrey' }}>
       
       <CardHeader 
         
@@ -140,16 +144,10 @@ export default function MediaCard(props) {
    
       <Box>
       <Button variant='contained' aria-label="cart " color="success" onClick={()=>{
-      if (ordername=="cake") {
-        dispatch(ckorder(params))
+    
+        dispatch(orderPlaced(params))
         
-      } 
-       else if (ordername=="icecream") {
-        dispatch(iceOrd(params))        
-       } else if(ordername=="chocolate")  {
-        dispatch(chocorder(params))
-      }
-        
+  
       }}>
        <Sbar  msg1= {qty+" items  added to cart"}  msgbut={"Add"}/>
         <Avatar src="https://www.iconpacks.net/icons/2/free-shopping-cart-icon-3045-thumb.png"/>
@@ -186,6 +184,7 @@ export default function MediaCard(props) {
           </Typography>
          
         </CardContent>
+        
     
     </Card>
   
