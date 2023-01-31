@@ -180,10 +180,10 @@ export default function Icecreamdata() {
             <Grid
               display="flex"
               justifyContent="center"
-              xs={4}
-              sm={4}
-              md={4}
-              pt={4}
+              xs={3}
+              sm={3}
+              md={3}
+              pt={3}
             >
               <MediaCard
                 title={iceitem.Icecreamname}
