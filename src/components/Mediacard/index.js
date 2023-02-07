@@ -136,13 +136,13 @@ export default function MediaCard(props) {
             size="small"
             variant="contained"
             aria-label="cart "
-            color="warning"
+            color="success"
             onClick={() => {
               dispatch(orderPlaced(params));
             }}
           >
-            <Sbar msg1={qty + " items  added to cart"} />
-            ADD
+            <Sbar msg1={qty + " items  added to cart"} msgbut={"ADD"} />
+
             <Avatar src="https://www.iconpacks.net/icons/2/free-shopping-cart-icon-3045-thumb.png" />
           </Button>
         </Box>
