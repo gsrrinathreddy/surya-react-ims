@@ -86,7 +86,6 @@ export default function CartsPage(props) {
           </Grid>
         </Grid>
       </Box>
-
       {
         <Button
           variant="contained"
@@ -101,18 +100,20 @@ export default function CartsPage(props) {
       {cartList.map((item) => {
         q = item.qty;
       })}
-      <Button
-        variant="contained"
-        color="success"
+      <br />
+      <Box
         onClick={() => {
           if (q > 0) navigate("/paymentpage");
           else {
           }
         }}
       >
-        <br />
-        <Sbar msg1={"your cart is empty"} msgbut={"buynow"} />
-      </Button>
+        <Sbar
+          msg1={"your cart is empty"}
+          msgbut={"buynow"}
+          bgColor="blue"
+        ></Sbar>
+      </Box>
     </>
   );
 }
