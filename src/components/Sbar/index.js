@@ -6,7 +6,8 @@ export default function Sbar(props) {
   let msg1 = props.msg1;
   let msgbut = props.msgbut;
   let num = props.num;
-
+  let actionMethod = props.actionMethod;
+  let bgColor = props.bgColor;
   const [state, setState] = React.useState({
     open: false,
     vertical: "top",
@@ -16,6 +17,7 @@ export default function Sbar(props) {
 
   const handleClick = (newState) => () => {
     setState({ open: true, ...newState });
+    actionMethod();
   };
 
   const handleClose = () => {
@@ -25,13 +27,14 @@ export default function Sbar(props) {
   const buttons = (
     <React.Fragment>
       <Button
-        sx={{ color: "beige" }}
+        sx={{ color: "white", backgroundColor: `${bgColor}` }}
         onClick={handleClick({
           vertical: "top",
           horizontal: "center",
         })}
       >
         {msgbut}
+        {props.addIcon}
       </Button>
       {/* <Button
         onClick={handleClick({

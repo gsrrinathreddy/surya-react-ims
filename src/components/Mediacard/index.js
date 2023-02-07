@@ -30,6 +30,7 @@ import { ordered as iceOrd } from "../../features/iceCream/icecreamSlice";
 import Stack from "@mui/material/Stack";
 import { ordered as chocorder } from "../../features/chocolates/chocslice";
 import Button from "@mui/material/Button";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -130,27 +131,29 @@ export default function MediaCard(props) {
           onChange={(e) => setQty(e.currentTarget.value)}
         />
 
-        <Box>
-          <Button
-            sx={{ width: "130px" }}
-            size="small"
-            variant="contained"
-            aria-label="cart "
-            color="success"
-            onClick={() => {
-              dispatch(orderPlaced(params));
-            }}
+        <Box
+          onClick={() => {
+            dispatch(orderPlaced(params));
+          }}
+        >
+          <Sbar
+            msg1={qty + " items  added to cart"}
+            msgbut={"Add"}
+            addIcon={<AddShoppingCartIcon />}
+            bgColor="blue"
           >
-            <Sbar msg1={qty + " items  added to cart"} msgbut={"ADD"} />
-
-            <Avatar src="https://www.iconpacks.net/icons/2/free-shopping-cart-icon-3045-thumb.png" />
-          </Button>
+            <Button
+              sx={{ width: "130px" }}
+              size="small"
+              variant="contained"
+              aria-label="cart "
+              color="success"
+            >
+              ADD
+            </Button>
+          </Sbar>
         </Box>
 
-        {/* <IconButton aria-label="add to favorites" onClick={()=>setCount(count+1)}>
-          {count} likes
-          <FavoriteIcon />
-        </IconButton> */}
         <br />
         <StyledRating
           name="customized-color"
@@ -170,7 +173,12 @@ export default function MediaCard(props) {
         <Typography>
           <del>actualprice:{price}</del>
         </Typography>
-        <Typography>Discounted Price: {discountedPrice}</Typography>
+        <Typography>
+          Discounted Price: {discountedPrice}{" "}
+          <IconButton sx={{ marginLeft: "50px" }} aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+        </Typography>
       </CardContent>
     </Card>
   );
