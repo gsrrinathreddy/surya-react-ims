@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 export default function Paymentpage() {
   let sum = 0;
 
-  const cartList = useSelector((state) => state.cart.cartList);
+  const cartlist = useSelector((state) => state.cart.cartList);
 
   return (
     <>
@@ -30,8 +30,8 @@ export default function Paymentpage() {
           />
         </left>
         <h4>Toatal Amount</h4>
-        {cartList.map((item) => {
-          sum += item.qty * item.DiscountedPrice;
+        {cartlist.map((item) => {
+          sum += item.qty * item.discountedPrice;
         })}
         <h2>{sum}</h2>
 

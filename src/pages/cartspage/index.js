@@ -97,25 +97,22 @@ export default function CartsPage(props) {
         </Button>
       }
       <br />
+      <br />
       {cartList.map((item) => {
         q = item.qty;
       })}
-      {/* <Button
-       
+      <Button
         variant="contained"
         color="success"
-      > */}
-      <br />
-      <Sbar
-        msg1={"your cart is empty"}
-        msgbut={"buynow"}
         onClick={() => {
           if (q > 0) navigate("/paymentpage");
           else {
           }
         }}
-      />
-      {/* </Button> */}
+      >
+        <br />
+        <Sbar msg1={"your cart is empty"} msgbut={"buynow"} />
+      </Button>
     </>
   );
 }
