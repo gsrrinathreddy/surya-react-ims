@@ -5,10 +5,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Cakes from "./pages/cakes";
 import CartComp from "./components/cartComp";
 import Icecream from "./pages/icecreams";
-import Homepage from "./pages/Homepage";
+
 import CartsPage from "./pages/cartspage";
 import Chocolates from "./pages/chocolates";
 import Flowers from "./pages/flowers";
+import SignIn from "./pages/sign in";
+import Signup from "./pages/signup";
+import Paymentpage from "./pages/payment";
+
 function App() {
   let p1 = ["cakes", "icecreams", "chocolates", "flowers"];
   let s1 = ["Profile", "settings", "password", "logout"];
@@ -18,12 +22,16 @@ function App() {
       <BrowserRouter>
         <Navbar pages={p1} settings={s1} />
         <Routes>
-          <Route path="/" element={<Icecream />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/cakes" element={<Cakes />} />
           <Route path="/icecreams" element={<Icecream />} />
           <Route path="/chocolates" element={<Chocolates />} />
           <Route path="/cart" element={<CartsPage />} />
           <Route path="/flowers" element={<Flowers />} />
+          <Route exact path="/Home" element={<Cakes />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/" element={<Icecream />} />
+          <Route path="/paymentpage" element={<Paymentpage />} />
         </Routes>
       </BrowserRouter>
     </div>

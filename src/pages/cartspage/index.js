@@ -6,13 +6,29 @@ import { useEffect, useState } from "react";
 import { ordered as icecreamorder } from "../../features/iceCream/icecreamSlice";
 import { ordered as chocorder } from "../../features/chocolates/chocslice";
 import { useNavigate } from "react-router-dom";
+import React from "react";
+import { FenceOutlined } from "@mui/icons-material";
+import Sbar from "../../components/Sbar";
 
-export default function CartsPage() {
+export default function CartsPage(props) {
   const dispatch = useDispatch();
   const cartList = useSelector((state) => state.cart.cartList);
   console.log(cartList);
+  const [name, setName] = useState("surya");
   const navigate = useNavigate();
+  let q = 0;
+  const Home = () => {
+    const navigate = useNavigate();
+  };
   let sum = 0;
+
+  useEffect(() => {
+    document.title = name;
+  });
+
+  function handleNamechange(e) {
+    setName(e.target.value);
+  }
 
   return (
     <>
@@ -70,8 +86,43 @@ export default function CartsPage() {
           </Grid>
         </Grid>
       </Box>
-      {/* 
-                <Button onClick={()=>navigate('order-summary')}>Place Order</Button> */}
+
+      {
+        <Button
+          variant="contained"
+          color="success"
+          onClick={() => navigate("/Home")}
+        >
+          Go back to Home page
+        </Button>
+      }
+      <br />
+      {cartList.map((item) => {
+        q = item.qty;
+      })}
+      {/* <Button
+       
+        variant="contained"
+        color="success"
+      > */}
+      <br />
+      <Sbar
+        msg1={"your cart is empty"}
+        msgbut={"buynow"}
+        onClick={() => {
+          if (q > 0) navigate("/paymentpage");
+          else {
+          }
+        }}
+      />
+      {/* </Button> */}
     </>
   );
 }
+
+// function width()
+// const [width,setwidth]=useState(width.windows)
+
+// useEffect(()=>{
+
+// })

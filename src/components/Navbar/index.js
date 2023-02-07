@@ -14,6 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import CartComp from "../cartComp";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // const pages = ['Products', 'Pricing', 'Blog'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -23,6 +24,30 @@ function Navbar(props) {
   let settings = props.settings;
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const navLinkStyles = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+
+      textDecoration: "none",
+
+      textTransform: "none",
+
+      my: 2,
+
+      fontSize: isActive ? "18px" : "16px",
+
+      display: "block",
+
+      color: isActive ? "pink" : "white",
+
+      fontWeight: isActive ? "bold" : "normal",
+
+      marginRight: "10px",
+
+      marginLeft: "10px",
+    };
+  };
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -123,10 +148,14 @@ function Navbar(props) {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Link to={page} style={{ textDecoration: "none" }}>
-                <Button
+              <NavLink
+                to={page}
+                style={navLinkStyles}
+                onClick={handleCloseNavMenu}
+              >
+                {/* <Button
                   key={page}
-                  onClick={handleCloseNavMenu}
+                  
                   sx={{
                     my: 2,
                     color: "black",
@@ -134,12 +163,26 @@ function Navbar(props) {
                     display: "block",
                     textTransform: "capitalize",
                   }}
-                >
-                  {page}
-                </Button>
-              </Link>
+                >   </Button> */}
+                {page}
+              </NavLink>
             ))}
           </Box>
+          <Link to={"/signin"} style={{ textDecoration: "none" }}>
+            <Box sx={{ marginRight: "25px" }}>
+              <Button
+                sx={{
+                  my: 2,
+                  color: "black",
+                  fontWeight: "bold",
+                  display: "block",
+                  textTransform: "capitalize",
+                }}
+              >
+                SignIn
+              </Button>
+            </Box>
+          </Link>
           <Link to={"/cart"} style={{ textDecoration: "none" }}>
             <Box sx={{ marginRight: "25px" }}>
               <CartComp color="black" />

@@ -25,6 +25,9 @@ export default function Sbar(props) {
   const buttons = (
     <React.Fragment>
       <Button
+        style={{}}
+        variant="contained"
+        color="success"
         onClick={handleClick({
           vertical: "top",
           horizontal: "center",
