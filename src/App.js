@@ -12,9 +12,11 @@ import Flowers from "./pages/flowers";
 import SignIn from "./pages/sign in";
 import Signup from "./pages/signup";
 import Paymentpage from "./pages/payment";
+import Users from "./pages/users";
+import Products from "./pages/products";
 
 function App() {
-  let p1 = ["cakes", "icecreams", "chocolates", "flowers"];
+  let p1 = ["cakes", "icecreams", "chocolates", "flowers", "users", "products"];
   let s1 = ["Profile", "settings", "password", "logout"];
 
   return (
@@ -32,6 +34,8 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/" element={<Icecream />} />
           <Route path="/paymentpage" element={<Paymentpage />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/products" element={<Products />} />
         </Routes>
       </BrowserRouter>
     </div>

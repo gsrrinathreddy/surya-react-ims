@@ -28,23 +28,14 @@ function Navbar(props) {
   const navLinkStyles = ({ isActive }) => {
     return {
       fontWeight: isActive ? "bold" : "normal",
-
       textDecoration: "none",
-
       textTransform: "none",
-
       my: 2,
-
       fontSize: isActive ? "18px" : "16px",
-
       display: "block",
-
       color: isActive ? "pink" : "white",
-
       fontWeight: isActive ? "bold" : "normal",
-
       marginRight: "10px",
-
       marginLeft: "10px",
     };
   };
